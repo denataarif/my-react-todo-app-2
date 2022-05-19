@@ -1,11 +1,12 @@
 import React from 'react'
 import Header from './Header'
 import TodoItem from './TodoItem'
+import Footer from './Footer'
 
 const TodoList = (props) => {
   return (
     <div className="todo-list">
-        <Header title={props.title.toUpperCase()}/>
+        <Header title={props.title.toUpperCase()} addNewItem={props.addNewItem}/>
         <ul className="list-group list-group-flush">
             {props.items.map( ( item ) => {
                 return(
@@ -14,6 +15,7 @@ const TodoList = (props) => {
             }
             )}
         </ul>
+        <Footer items={props.items}/>
     </div>
   )
 }
